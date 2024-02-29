@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerAttacker : MonoBehaviour
 {
+	[SerializeField] bool debug;
 	[SerializeField] Animator animator;
 	// [SerializeField] Weapon weapon;
 
@@ -65,11 +67,15 @@ public class PlayerAttacker : MonoBehaviour
 	}
 	private void OnAttack(InputValue value)
 	{
+		if (EventSystem.current.IsPointerOverGameObject()) // UI 누를 때는 칼 휘두르지 않게
+			return;
 		Attack();
 	}
 
 	private void OnDrawGizmosSelected()
 	{
+		if (debug == false)
+			return;
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere(transform.position, range);
 	}
