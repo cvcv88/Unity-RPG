@@ -10,7 +10,8 @@ public class GameScene : BaseScene
 	[SerializeField] int count;
 	public override IEnumerator LoadingRoutine()
 	{
-		Debug.Log("GameScene Load Start");
+		yield return null;
+		/*Debug.Log("GameScene Load Start");
 		// fake loading
 		yield return new WaitForSecondsRealtime(1f);
 		Manager.Scene.SetLoadingBarValue(0.6f);
@@ -31,7 +32,7 @@ public class GameScene : BaseScene
 		Manager.Scene.SetLoadingBarValue(0.8f);
 		yield return new WaitForSecondsRealtime(1f);
 		Manager.Scene.SetLoadingBarValue(0.9f);
-		Debug.Log("GameScene Loading Finish");
+		Debug.Log("GameScene Loading Finish");*/
 		//player = Instantiate(player);
 
 		//Transform target = Manager.Scene.GetCurScene<GameScene>().player.transform;

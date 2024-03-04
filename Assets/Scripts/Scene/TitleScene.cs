@@ -1,12 +1,20 @@
 using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 
 public class TitleScene : BaseScene
 {
 	public void GameSceneLoad()
 	{
 		Manager.Scene.LoadScene("GameScene");
+	}
+
+	public void NewGame()
+	{
+
+	}
+
+	public void ContinueGame()
+	{
+
 	}
 
 	public override IEnumerator LoadingRoutine()

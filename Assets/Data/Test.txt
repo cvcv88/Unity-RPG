@@ -1,0 +1,8 @@
+{
+    "name": "YJ",
+    "level": 5,
+    "gold": 100,
+    "exp": 2000,
+    "speed": 2.5,
+    "check": true
+}
