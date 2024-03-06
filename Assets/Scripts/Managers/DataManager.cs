@@ -20,6 +20,7 @@ public class DataManager : MonoBehaviour
 	public void NewData()
 	{
 		gameData = new GameData();
+		SaveData();
 	}
 
 	// 어트리뷰트 attribute 함수 앞에 붙여주고, 이름 말해준다.
@@ -49,7 +50,7 @@ public class DataManager : MonoBehaviour
 
 
 	[ContextMenu("Load")]
-	public void Load()
+	public void LoadData()
 	{
 		string filePath = Path.Combine(path, "Test.txt");
 		if (File.Exists(filePath))
@@ -68,5 +69,11 @@ public class DataManager : MonoBehaviour
 			// level = 1; // 저장된 파일 없다면 1로 지정
 			// 새로 시작
 		}
+	}
+
+	public bool ExistSavaData() // 파일 경로상에 파일이 있는지 확인
+	{
+		string filePath = Path.Combine(path, "Test.txt");
+		return File.Exists(filePath);
 	}
 }

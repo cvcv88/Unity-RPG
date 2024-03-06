@@ -5,9 +5,12 @@ using UnityEngine;
 public class GameScene : BaseScene
 {
 	// public GameObject player;
-	[SerializeField] Monster monsterPrefab;
+	/*[SerializeField] Monster monsterPrefab;
 	[SerializeField] Transform spawnPoint;
-	[SerializeField] int count;
+	[SerializeField] int count;*/
+
+	[SerializeField] Transform player;
+	[SerializeField] CharacterController playerController;
 	public override IEnumerator LoadingRoutine()
 	{
 		yield return null;
@@ -41,5 +44,23 @@ public class GameScene : BaseScene
 	public void ToTitleScene()
 	{
 		Manager.Scene.LoadScene("TitleScene");
+	}
+
+	public override void SceneSave()
+	{
+		Manager.Data.gameData.gameSceneData.playerPos = player.position; 
+		Manager.Data.SaveData();
+	}
+
+	public override void SceneLoad()
+	{
+		if (Manager.Data.gameData.SceneSaved[Manager.Scene.GetCurSceneIndex()] == false)
+			return;
+
+		Manager.Data.LoadData();
+		Debug.Log(Manager.Data.gameData.gameSceneData.playerPos);
+		playerController.enabled = false;
+		player.position = Manager.Data.gameData.gameSceneData.playerPos;
+		playerController.enabled = true;
 	}
 }

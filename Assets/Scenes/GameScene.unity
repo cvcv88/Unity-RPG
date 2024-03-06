@@ -28083,7 +28083,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965473620}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11055149, y: 0.000000035254438, z: 0.0000000039214676, w: 0.99387044}
+  m_LocalRotation: {x: -0.11055149, y: -0.000000035254438, z: -0.0000000039214676, w: 0.99387044}
   m_LocalPosition: {x: -29.5, y: 0.39999998, z: -19.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34128,7 +34128,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177672299}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.110551484, y: 0.000000017627217, z: 0.0000000019607336, w: 0.99387044}
+  m_LocalRotation: {x: -0.110551484, y: -0.000000017627215, z: -0.0000000019607334, w: 0.99387044}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -46704,9 +46704,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80fb5689969bb7640817a51e0f0a8c4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  monsterPrefab: {fileID: 0}
-  spawnPoint: {fileID: 0}
-  count: 0
+  player: {fileID: 2102562208}
+  playerController: {fileID: 2102562211}
 --- !u!4 &1671010318
 Transform:
   m_ObjectHideFlags: 0
@@ -58639,7 +58638,7 @@ CharacterController:
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Height: 1.8
   m_Radius: 0.5

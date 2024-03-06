@@ -55,6 +55,11 @@ public class SceneManager : MonoBehaviour
 		}
 
 		Time.timeScale = 0f;
+		loadingBar.gameObject.SetActive(true); // ?
+		
+		BaseScene prevScene = GetCurScene();
+		prevScene.SceneSave();
+
 		AsyncOperation oper = UnitySceneManager.LoadSceneAsync(sceneName); // 백그라운드에서 로딩, 다되었을때 전환
 		oper.allowSceneActivation = true; // 로딩 되고나서 원할때에만 전환되게 할 수 있다.
 		while (oper.isDone == false /*oper.progress < 0.9f*/) // oper가 끝났는지 확인 / 0.9가 완료되었을 때이기 때문에 0.9보다 작을때만 돌아가게
@@ -67,9 +72,13 @@ public class SceneManager : MonoBehaviour
 		//oper.allowSceneActivation = true;
 
 		BaseScene curScene = GetCurScene();
+
+		curScene.SceneLoad();
+
 		yield return curScene.LoadingRoutine();
 		Time.timeScale = 1f;
 		loadingBar.value = 1f;
+		loadingBar.gameObject.SetActive(false);
 
 		// yield return new WaitForSeconds(0.1f); // 잠깐 멈춘 거
 
@@ -87,5 +96,10 @@ public class SceneManager : MonoBehaviour
 	public void SetLoadingBarValue(float value)
 	{
 		loadingBar.value = value;
+	}
+
+	public int GetCurSceneIndex()
+	{
+		return UnitySceneManager.GetActiveScene().buildIndex;
 	}
 }

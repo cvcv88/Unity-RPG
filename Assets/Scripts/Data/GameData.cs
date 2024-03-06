@@ -16,6 +16,7 @@ public class GameData
 	// public Vector3 position;
 	// public GameObject target;
 
+	public bool[] SceneSaved;
 	public GameSceneData gameSceneData;
 	// Serializable을 붙여주어야 직렬화된다.
 
@@ -28,6 +29,7 @@ public class GameData
 		//speed = 3;
 		//check = false;
 
+		SceneSaved = new bool[32];
 		gameSceneData = new GameSceneData();
 	}
 }
