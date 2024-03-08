@@ -25837,6 +25837,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cca5f832362bea43b17c791ae181f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData:
+    name: Player
+    level: 5
+    gold: 100
+    exp: 200
+    SceneSaved: 
+    gameSceneData:
+      playerPos: {x: 0, y: 0, z: 0}
 --- !u!4 &869658274
 Transform:
   m_ObjectHideFlags: 0
@@ -28083,7 +28091,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 965473620}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.11055149, y: -0.000000035254438, z: -0.0000000039214676, w: 0.99387044}
+  m_LocalRotation: {x: -0.11055149, y: 0.000000035254438, z: 0.0000000039214676, w: 0.99387044}
   m_LocalPosition: {x: -29.5, y: 0.39999998, z: -19.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -34128,7 +34136,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1177672299}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.110551484, y: -0.000000017627215, z: -0.0000000019607334, w: 0.99387044}
+  m_LocalRotation: {x: -0.110551484, y: 0.000000017627217, z: 0.0000000019607336, w: 0.99387044}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
